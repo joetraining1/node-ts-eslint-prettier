@@ -1,0 +1,52 @@
+{
+  "name": "ts-eslint-prettier",
+  "version": "1.0.0",
+  "description": "Node Ts Express API Webservice secured development using ESLint",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "launch": "nodemon dist/src/index.js",
+    "build": "npx tsc",
+    "dev": "npx tsc --noEmit && npx tsx --watch src/index.ts",
+    "type-check": "npx tsc --noEmit",
+    "observe": "npx tsx --watch src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "imports": {
+    "#*": "./src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joetraining1/node-ts-eslint-prettier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/joetraining1/node-ts-eslint-prettier/issues"
+  },
+  "homepage": "https://github.com/joetraining1/node-ts-eslint-prettier#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3",
+    "nodemon": "^3.1.10",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@tsconfig/node23": "^23.0.2",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.38.0"
+  }
+}
