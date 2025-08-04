@@ -137,3 +137,12 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Typescript build output
+/dist
+
+# Test Coverage
+/coverage
+
+# OS Generated File
+.DS_Store

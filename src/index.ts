@@ -1,21 +1,8 @@
 import express from "express";
-import { Request, Response } from 'express';
+import { welcomeMsg } from "#middlewares/WelcomeMessage.js";
 
 const app = express();
-const port = 5000;
-
-interface welcome {
-  req: Request,
-  res: Response
-}
-
-const welcomeMsg = async(req: Request, res: Response) => {
-  return res.send(
-    {
-      message: "You are connected to this API.",
-    }
-  ).status(200);
-};
+const port = process.env.API_SERVER_PORT ?? 9001;
 
 app.get("/", welcomeMsg);
 
