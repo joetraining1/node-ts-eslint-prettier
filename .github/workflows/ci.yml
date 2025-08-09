@@ -1,35 +1,54 @@
 name: CI
 
+# this is the branch it targets on, it will intercept any code shipped.
 on:
   push:
     branches:
       - main
 
+#this is the list of the jobs taken before the code shipped.
 jobs:
   quality-checks:
     runs-on: ubuntu-latest
 
     steps:
+      - echo "staging codebase.."
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - echo "setting up runtime.."
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
         
+      - echo "beginning customs.."
       - name: Install Dependencies
          run: npm ci
+      - echo "finished installing dependencies."
+
       - name: Run tests
          run: npm run test:run
+      - echo "tests finished."
+      
       - name: Run Typescript type checking
          run: npm run type-check
+      - echo "finished checking type integrities."
+
       - name: Run ESLint and fix
          run: npm run lint:fix
+      - echo "finished fixing lints."
+
       - name: Run Prettier and format
          run: npm run format
+      - echo "finished formatting codebase."
+      
       - name: Check for remaining ESLint errors
          run: npm run lint
+      - echo "finshed checking lint erorrs."
+
       - name: Check for remaining formatting issues
          run: npm run format:check
+      - echo "finished checking code format issues."
+      - echo "customs done."
