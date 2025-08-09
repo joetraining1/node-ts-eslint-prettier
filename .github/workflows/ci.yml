@@ -25,7 +25,7 @@ jobs:
         
       - echo "beginning customs.."
       - name: Install Dependencies
-         run: npm ci
+         run: npm run ci
       - echo "finished installing dependencies."
 
       - name: Run tests
