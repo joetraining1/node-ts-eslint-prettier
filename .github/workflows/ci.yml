@@ -9,6 +9,7 @@ on:
 #this is the list of the jobs taken before the code shipped.
 jobs:
   quality-checks:
+    name : Quality Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +26,7 @@ jobs:
         
       - echo "beginning customs.."
       - name: Install Dependencies
-         run: npm run ci
+         run: npm ci
       - echo "finished installing dependencies."
 
       - name: Run tests
