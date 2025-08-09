@@ -7,6 +7,7 @@
   "description": "Node Ts Express API Webservice secured development using ESLint",
   "scripts": {
     "launch": "nodemon dist/src/index.js",
+    "ci": "npm instal --force",
     "build": "npx tsc",
     "stack-dev": "npx tsc --noEmit && npx tsx --watch src/index.ts",
     "dev": "tsx --watch --env-file .env src/index.ts",
